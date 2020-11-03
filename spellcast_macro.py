@@ -29,20 +29,22 @@ def cast_spell():
     """
     logger.info("Creating rune...")
     pyautogui.press("f9")
+    time.sleep(1)
 
 
 def main():
     """Logic of the macro.
     """
-    logger.info("Initializing spellcast macro...")
     while True:
-        time.sleep(10)
         eat_food()
         cast_spell()
-        time.sleep(300)
+        cast_spell()
+        time.sleep(250)
 
 
 if __name__ == "__main__":
+    logger.info("Initializing spellcast macro...")
+    time.sleep(10)
     try:
         main()
     except KeyboardInterrupt:
