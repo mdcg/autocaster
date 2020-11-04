@@ -1,4 +1,5 @@
 import logging
+import random
 import sys
 import time
 
@@ -29,7 +30,6 @@ def cast_spell():
     """
     logger.info("Creating rune...")
     pyautogui.press("f9")
-    time.sleep(1)
 
 
 def main():
@@ -38,15 +38,16 @@ def main():
     while True:
         eat_food()
         cast_spell()
-        cast_spell()
-        time.sleep(250)
+        # Slightly varying the time between one cast and another helps to make
+        # it harder to detect macros.
+        time.sleep(random.randrange(239, 257))
 
 
 if __name__ == "__main__":
-    logger.info("Initializing spellcast macro...")
+    logger.info("Initializing Autocaster Macro...")
     time.sleep(10)
     try:
         main()
     except KeyboardInterrupt:
-        logger.info("Finishing spellcast macro...")
+        logger.info("Finishing Autocaster Macro...")
         sys.exit(0)
