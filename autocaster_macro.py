@@ -29,18 +29,33 @@ def cast_spell():
     """Evoke magic to make rune.
     """
     logger.info("Creating rune...")
+    # pyautogui.press("f12")
     pyautogui.press("f9")
+
+
+def look_to_some_direction():
+    """Looking randomly in any direction prevents you from being "kicked" by
+    inactivity.
+    """
+    logger.info("Looking for some direction...")
+    pyautogui.press("right")
+    time.sleep(1)
+    pyautogui.press("left")
+    directions = ["up", "down", "right", "left"]
+    pyautogui.hotkey("ctrl", random.choice(directions))
 
 
 def main():
     """Logic of the macro.
     """
     while True:
+        look_to_some_direction()
         eat_food()
         cast_spell()
         # Slightly varying the time between one cast and another helps to make
         # it harder to detect macros.
-        time.sleep(random.randrange(239, 257))
+        # time.sleep(random.randrange(222, 233))
+        time.sleep(random.randrange(285, 292))
 
 
 if __name__ == "__main__":
