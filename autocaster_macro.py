@@ -41,8 +41,10 @@ def look_to_some_direction():
     pyautogui.press("right")
     time.sleep(1)
     pyautogui.press("left")
-    directions = ["up", "down", "right", "left"]
+    directions = ["up", "right", "down"]
     pyautogui.hotkey("ctrl", random.choice(directions))
+    time.sleep(1)
+    pyautogui.hotkey("ctrl", "right")
 
 
 def main():
@@ -52,10 +54,14 @@ def main():
         look_to_some_direction()
         eat_food()
         cast_spell()
+        time.sleep(3)
+        cast_spell()
+        time.sleep(3)
+        cast_spell()
         # Slightly varying the time between one cast and another helps to make
         # it harder to detect macros.
-        # time.sleep(random.randrange(222, 233))
-        time.sleep(random.randrange(285, 292))
+        time.sleep(random.randrange(120, 140))
+        # time.sleep(random.randrange(285, 292))
 
 
 if __name__ == "__main__":
