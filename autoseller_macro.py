@@ -22,15 +22,24 @@ def look_to_some_direction():
     inactivity.
     """
     logger.info("Looking for some direction...")
-    directions = ["up", "down", "right", "left"]
-    pyautogui.hotkey("ctrl", random.choice(directions))
+    pyautogui.hotkey("ctrl", "up")
+    time.sleep(2)
+    pyautogui.hotkey("ctrl", "down")
 
 
 def send_message():
     """Send the message you want on the trade channel.
     """
     logger.info("Sending message...")
-    pyautogui.write(">>> Enter you message here <<<", interval=0.25) 
+    pyautogui.press("f1")
+    pyautogui.press("tab")
+    pyautogui.press("tab")
+    pyautogui.press("f2")
+    pyautogui.press("tab")
+    pyautogui.press("f2")
+    pyautogui.press("tab")
+    pyautogui.press("f2")
+    pyautogui.press("tab")
     time.sleep(random.randrange(120, 135))
 
 
